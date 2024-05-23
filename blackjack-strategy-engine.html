@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="images/favicon.ico">
+<title>Blackjack Basic Strategy Engine - BlackjackInfo.com</title>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="css/style.css" rel="stylesheet">
+<!-- Font Awesome
+        ------------------------------------------->
+<link href="css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body class="start-here-page">
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+    <a class="navbar-brand" href="#"><img src="images/logo.png"></a> </div>
+  <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown"><a href="#" class="dropdown-toggle">LEARN <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Start Here</a></li>
+          <li><a href="#">Blackjack Basic Stratejy Engine</a></li>
+          <li><a href="#">Rule of Blackjack</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a href="#" class="dropdown-toggle">PRACTISE <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Online Blackjack Stratejy Trainer</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a href="#" class="dropdown-toggle">OPTIMIZE <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Card Counting</a></li>
+          <li><a href="#">Blackjack School</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a href="#" class="dropdown-toggle">EXPLORE <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Blackjackinfo Blog</a></li>
+          <li><a href="#">Interviews</a></li>
+          <li><a href="#">Blackjack Tournaments</a></li>
+          <li><a href="#">Blackjack Software</a></li>
+        </ul>
+      </li>
+      <li><a href="#">FORUM</a></li>
+      <li class="dropdown"><a href="#" class="dropdown-toggle">ONLINE BLACKJACK <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Live Dealer Blackjack</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div id="sb-search" class="sb-search">
+      <form>
+        <input class="sb-search-input" placeholder="Enter your search term..." type="text" value="" name="search" id="search">
+        <input class="sb-search-submit" type="submit" value="">
+        <span class="sb-icon-search"><img src="images/search-icon.png"> </span>
+      </form>
+    </div>
+  </div>
+  <!--/.nav-collapse --> 
+  
+</nav>
+
+<!-- PAGE CONTENT ------------------------------------------------->
+<section class="section">
+  <div class="container text-center">
+    <h1 class="big">Blackjack Basic Strategy Engine</h1>
+    <div class="social-buttons mB20">
+      <p> <a href="#" class="btn social shadow-bottom facebook"><i class="fa fa-facebook"></i>Facebook 0</a> <a href="#" class="btn social shadow-bottom twitter"><i class="fa fa-twitter"></i>Twitter 0</a> <a href="#" class="btn social shadow-bottom google-plus"><i class="fa fa-google-plus"></i>Google+ 0</a> </p>
+    </div>
+    <p class="head">BlackjackInfo is the home of the original Blackjack Basic Strategy Engine, since 1998.</p>
+    <p class="head">The Strategy Engine provides free custom strategy charts for the exact set of rules at your casino.</p>
+    <p class="head">These strategy charts are also applicable to playing <a href="https://www.blackjackinfo.com/online-blackjack/">blackjack online</a> or <a href="https://www.blackjackinfo.com/live-dealer-blackjack/">live blackjack</a>.</p>
+    <p class="mB30 head">If you are not sure how to use the chart, see the <a href="/card/basic-strategy-card-instructions/">instructions</a> for our wallet-sized plastic <a href="/card/">strategy cards</a>.</p>
+    <p class="mB40">
+      <button class="btn-lg btn-primary" href="#" data-toggle="modal" data-target="#adjust-the-rules">Adjust The Rules</button>
+    </p>
+    <div class="row mB40">
+      <div class="col-sm-6 decks-dealer col-center">
+        <div class="section-gray text-center p15">
+          <h4 class="mB10">6 Decks, H17, DAS, No Surrender, Peek</h4>
+          <h5 class="black">Estimated casino edge for these rules:0.66%</h5>
+          <h3 class="mT30"><strong>Hard Total</strong></h3>
+          <table class="mB30" width="100%" cellspacing="0" cellpadding="0" border="0">
+            <thead>
+              <tr>
+                <td rowspan="2" width="75px">Your Hand</td>
+                <td colspan="10" class="white-bg">Dealer</td>
+              </tr>
+              <tr>
+                <td class="white-bg">2</td>
+                <td class="white-bg">3</td>
+                <td class="white-bg">4</td>
+                <td class="white-bg">5</td>
+                <td class="white-bg">6</td>
+                <td class="white-bg">7</td>
+                <td class="white-bg">8</td>
+                <td class="white-bg">9</td>
+                <td class="white-bg">T</td>
+                <td class="white-bg">A</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Hand 5</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+              </tr>
+              <tr>
+                <td>Hand 6</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+              </tr>
+              <tr>
+                <td>Hand 7</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+              </tr>
+              <tr>
+                <td>Hand 8</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+              </tr>
+              <tr>
+                <td>Hand 9</td>
+                <td class="green-bg">H</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+              </tr>
+              <tr>
+                <td>Hand 10</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+              </tr>
+              <tr>
+                <td>Hand 11</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+              </tr>
+              <tr>
+                <td>Hand 12</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+              </tr>
+              <tr>
+                <td>Hand 13</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+              </tr>
+              <tr>
+                <td>Hand 14</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+              </tr>
+              <tr>
+                <td>Hand 15</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+              </tr>
+              <tr>
+                <td>Hand 16</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+              </tr>
+              <tr>
+                <td>Hand 17</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+              </tr>
+              <tr>
+                <td>Hand 18+</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3><strong>Soft Total</strong></h3>
+          <table class="mB30" width="100%" cellspacing="0" cellpadding="0" border="0">
+            <thead>
+              <tr>
+                <td rowspan="2" width="75px">Your Hand</td>
+                <td colspan="10" class="white-bg">Dealer</td>
+              </tr>
+              <tr>
+                <td class="white-bg">2</td>
+                <td class="white-bg">3</td>
+                <td class="white-bg">4</td>
+                <td class="white-bg">5</td>
+                <td class="white-bg">6</td>
+                <td class="white-bg">7</td>
+                <td class="white-bg">8</td>
+                <td class="white-bg">9</td>
+                <td class="white-bg">T</td>
+                <td class="white-bg">A</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ace + 2</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+              </tr>
+              <tr>
+                <td>Ace + 3</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+              </tr>
+              <tr>
+                <td>Ace + 4</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+              </tr>
+              <tr>
+                <td>Ace + 5</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+              </tr>
+              <tr>
+                <td>Ace + 6</td>
+                <td class="green-bg">H</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+              </tr>
+              <tr>
+                <td>Ace + 7</td>
+                <td class="blue-bg">DS</td>
+                <td class="blue-bg">DS</td>
+                <td class="blue-bg">DS</td>
+                <td class="blue-bg">DS</td>
+                <td class="blue-bg">DS</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+              </tr>
+              <tr>
+                <td>Ace + 8</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="blue-bg">DS</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+              </tr>
+              <tr>
+                <td>Ace + 9</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3><strong>Pairs</strong></h3>
+          <table class="mB30" width="100%" cellspacing="0" cellpadding="0" border="0">
+            <thead>
+              <tr>
+                <td rowspan="2" width="75px">Your Hand</td>
+                <td colspan="10" class="white-bg">Dealer</td>
+              </tr>
+              <tr>
+                <td class="white-bg">2</td>
+                <td class="white-bg">3</td>
+                <td class="white-bg">4</td>
+                <td class="white-bg">5</td>
+                <td class="white-bg">6</td>
+                <td class="white-bg">7</td>
+                <td class="white-bg">8</td>
+                <td class="white-bg">9</td>
+                <td class="white-bg">T</td>
+                <td class="white-bg">A</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>(2,2)</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+              </tr>
+              <tr>
+                <td>(3,3)</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+              </tr>
+              <tr>
+                <td>(4,4)</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+              </tr>
+              <tr>
+                <td>(5,5)</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="blue-bg">D</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+              </tr>
+              <tr>
+                <td>(6,6)</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+              </tr>
+              <tr>
+                <td>(7,7)</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+                <td class="green-bg">H</td>
+              </tr>
+              <tr>
+                <td>(8,8)</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+              </tr>
+              <tr>
+                <td>(9,9)</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="red-bg">S</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+              </tr>
+              <tr>
+                <td>(T,T)</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+                <td class="red-bg">S</td>
+              </tr>
+              <tr>
+                <td>(A,A)</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+                <td class="purple-bg">P</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="table-keys-info">
+            <div class="title">Keys:</div>
+            <div class="keys-names">
+              <div class="row">
+                <div class="col-xs-4">
+                  <div class="hit">
+                    <div class="title">H</div>
+                    <div class="name"> Hits</div>
+                  </div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="stand">
+                    <div class="title">S</div>
+                    <div class="name"> Stand</div>
+                  </div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="split">
+                    <div class="title">P</div>
+                    <div class="name"> Split</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="double">
+                    <div class="title">D</div>
+                    <div class="name">Double (Hit if not allowed)</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="double">
+                    <div class="title">DS</div>
+                    <div class="name">Double (Stand if not allowed)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>Looking for a strategy chart to use at the table?</p>
+    <p>We have wallet-sized plastic <a href="/card/">blackjack strategy cards</a> in our <a href="/store/">store</a>.</p>
+  </div>
+</section>
+
+<!-- FOOTER SECTION ------------------------------------------------->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-push-6">
+        <div class="newsletters">
+          <h1 class="white">Newsletters</h1>
+          Get periodic updates. Over 400 people have<br>
+          already subscribed!
+          <div class="input-group mT30">
+            <input type="text" class="form-control" placeholder="yourname@email.com">
+            <span class="input-group-btn">
+            <button class="btn btn-primary" type="button">Subscribe</button>
+            </span> </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-sm-pull-6">
+        <div class="footer-left">
+          <h3 class="white">Languages</h3>
+          <img src="images/languages.png">
+          <div class="footer-links mT30">
+            <h3 class="white">Important Links</h3>
+            <ul>
+              <li><a href="#">Affiliate Notice</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Problem Gambling?</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">(c) 2017 - Company</div>
+  </div>
+</footer>
+
+<!-- Adjust The Rules
+    ================================================== -->
+<div class="modal fade" id="adjust-the-rules" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="vertical-alignment-helper">
+    <div class="modal-dialog vertical-align-center" role="document">
+      <div class="modal-content">
+        <div class="modal-header mB10">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Choose the blackjack rules:</h4>
+        </div>
+        <div class="modal-body">
+          <form method="get" action="/blackjack-basic-strategy-engine/" class="bse-form">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="numdecks" class="right inline">Number of Decks:</label>
+                  <select name="numdecks" id="numdecks">
+                    <option value="1">1 deck</option>
+                    <option value="2">2 decks</option>
+                    <option value="3">3 decks</option>
+                    <option value="4">4 decks</option>
+                    <option value="5">5 decks</option>
+                    <option selected="" value="6">6 decks</option>
+                    <option value="7">7 decks</option>
+                    <option value="8">8 decks</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="soft17" class="right inline">Soft 17:</label>
+                  <select name="soft17" id="soft17">
+                    <option value="s17">Dealer Stands on Soft 17</option>
+                    <option selected="" value="h17">Dealer Hits Soft 17</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="dbl" class="right inline">Permitted Doubles</label>
+                  <select name="dbl" id="dbl">
+                    <option selected="" value="all">Double Any 2 Cards</option>
+                    <option value="d9">Double 9,10,11 Only</option>
+                    <option value="d10">Double 10,11 Only</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="das" class="right inline">Double After Split</label>
+                  <select name="das" id="das">
+                    <option selected="" value="yes">Double After Split Allowed</option>
+                    <option value="no">No Double After Split</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row mB10">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="surr" class="right inline">Surrender:</label>
+                  <select name="surr" id="surr">
+                    <option selected="" value="ns">No Surrender</option>
+                    <option value="ls">Late Surrender</option>
+                    <option value="es">Early Surrender</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="peek" class="right inline">Dealer Hole Card:</label>
+                  <select name="peek" id="peek">
+                    <option selected="" value="yes">Dealer Peeks (US Style)</option>
+                    <option value="no">No Peek (European Style)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <p class="text-center mB0">
+              <input class="btn-lg btn-primary" value="Update the Strategy" type="submit">
+            </p>
+          </form>
+        </div>
+        <div class="modal-footer text-center small mT10"> Need help with the rule choices?  Read our page on <a href="/blackjack-rules/rule-variations/">Rule Variations</a>. </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="js/jquery.min.js"></script> 
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script> 
+<script src="js/bootstrap.min.js"></script> 
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> 
+<script src="js/ie10-viewport-bug-workaround.js"></script> 
+
+<!-- Accordians JavaScript
+    ================================================== --> 
+<script type="text/javascript" src="js/custom.js"></script> 
+
+<!-- Search icon JavaScript
+    ================================================== --> 
+<script type="text/javascript" src="js/classie.js"></script> 
+<script type="text/javascript" src="js/uisearch.js"></script> 
+<script type="text/javascript">
+			new UISearch( document.getElementById( 'sb-search' ) );
+		</script> 
+<!-- jcf scripts and styles -->
+<link rel="stylesheet" href="css/jcf.css">
+<script type="text/javascript" src="js/jcf.js"></script> 
+<script type="text/javascript" src="js/jcf.select.js"></script> 
+<script type="text/javascript">
+	$(function() {
+		jcf.replaceAll();
+	});
+</script>
+</body>
+</html>
